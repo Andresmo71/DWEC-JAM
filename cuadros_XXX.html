@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Cuadrados aleatorios</title>
+    <style>
+        div{
+            position:fixed;
+            width:50px;
+            height:50px;
+        }
+    </style>
+    </head>
+<body>
+<script>
+let aleatorio=(max) => parseInt(Math.random()*max)
+
+    function generarCuadrados(){
+        for (let i=0; i<100;i++){
+        document.write(`<div style='
+    left:${aleatorio(400)}px;
+    top:${aleatorio(400)}px;
+    position:fixed;
+    width:50px;
+    height:50px;
+    background-color:rgb(${aleatorio(255)},${aleatorio(255)},${aleatorio(255)});'></div>`)
+   
+   
+    }
+    }
+
+    setInterval(generarCuadrados,3000)
+    
+    
+</script>    
+</body>
+</html>
