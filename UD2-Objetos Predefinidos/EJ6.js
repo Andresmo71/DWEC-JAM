@@ -1,4 +1,5 @@
 let fecha=Date
 let mostrarFecha= () =>{
-    console.log(Date)
+    console.log(Date())
 }
+setTimeout(mostrarFecha,2000)
