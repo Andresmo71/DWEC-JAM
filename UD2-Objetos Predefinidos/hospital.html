@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Central</title>
+  <link rel="stylesheet" href="hospital.css">
+  <script src="hospital.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🏥 Hospital Central</h1>
+  </header>
+
+  <nav>
+    <button id="btnPacientes" onclick="mostrar()" class="activo">👨‍⚕️ Pacientes</button>
+    <button id="btnEstadisticas" onclick="estadisticas()">📊 Estadísticas</button>
+    <button id="btnOrdenado" onclick="ordenado()">📝 Listado Ordenado</button>
+  </nav>
+
+  <div id="estadisticasContainer" style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+    <div id="totalPacientes" class="dato"><strong>Total Pacientes:</strong> <span id="totalPacientesValor"></span></div>
+    <div id="edadPromedio" class="dato"><strong>Edad Promedio:</strong> <span id="edadPromedioValor"></span></div>
+    <div id="edadMinima" class="dato"><strong>Edad Mínima:</strong> <span id="edadMinimaValor"></span></div>
+    <div id="edadMaxima" class="dato"><strong>Edad Máxima:</strong> <span id="edadMaximaValor"></span></div>
+    <div id="pesoPromedio" class="dato"><strong>Peso Promedio:</strong> <span id="pesoPromedioValor"></span></div>
+  </div>
+
+</body>
+</html>
+
