@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de la Compra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .input-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .product-list {
+            margin: 20px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        li:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .totals {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de la Compra</h1>
+        
+        <div class="input-section">
+            <label for="product-input">Añadir producto (formato: producto, precio):</label>
+            <input type="text" id="product-input" placeholder="Ej: Manzanas, 2.50">
+            <button id="add-btn">Añadir Producto</button>
+        </div>
+        
+        <div class="product-list">
+            <h2>Productos:</h2>
+            <ul id="product-list">
+                <!-- Los productos se añadirán aquí dinámicamente -->
+            </ul>
+        </div>
+        
+        <div class="totals">
+            <p>Total Unidades: <span id="total-units">0</span></p>
+            <p>Total Precio: <span id="total-price">0.00</span> €</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const productInput = document.getElementById('product-input');
+            const addBtn = document.getElementById('add-btn');
+            const productList = document.getElementById('product-list');
+            const totalUnits = document.getElementById('total-units');
+            const totalPrice = document.getElementById('total-price');
+            
+            let products = [];
+            
+            // Función para añadir producto
+            function addProduct() {
+                const inputValue = productInput.value.trim();
+                
+                if (!inputValue) {
+                    alert('Por favor, introduce un producto');
+                    return;
+                }
+                
+                // Separar nombre y precio por coma
+                const parts = inputValue.split(',');
+                
+                if (parts.length < 2) {
+                    alert('Formato incorrecto. Usa: "producto, precio"');
+                    return;
+                }
+                
+                const name = parts[0].trim();
+                const price = parseFloat(parts[1].trim());
+                
+                if (!name || isNaN(price) || price < 0) {
+                    alert('Precio no válido. Introduce un número válido.');
+                    return;
+                }
+                
+                // Añadir producto al array
+                products.push({ name, price });
+                
+                // Actualizar la lista
+                updateProductList();
+                
+                // Limpiar el input
+                productInput.value = '';
+                productInput.focus();
+            }
+            
+            // Función para actualizar la lista de productos
+            function updateProductList() {
+                // Limpiar la lista
+                productList.innerHTML = '';
+                
+                // Añadir cada producto a la lista
+                products.forEach((product, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span>${product.name}</span>
+                        <span>${product.price.toFixed(2)} €</span>
+                        <button class="delete-btn" data-index="${index}">Eliminar</button>
+                    `;
+                    productList.appendChild(li);
+                });
+                
+                // Actualizar totales
+                updateTotals();
+                
+                // Añadir event listeners a los botones de eliminar
+                document.querySelectorAll('.delete-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        products.splice(index, 1);
+                        updateProductList();
+                    });
+                });
+            }
+            
+            // Función para actualizar los totales
+            function updateTotals() {
+                const units = products.length;
+                const price = products.reduce((total, product) => total + product.price, 0);
+                
+                totalUnits.textContent = units;
+                totalPrice.textContent = price.toFixed(2);
+            }
+            
+            // Event listeners
+            addBtn.addEventListener('click', addProduct);
+            
+            productInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addProduct();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
