@@ -1,0 +1,1 @@
+let cuerpoPagina=document.body
