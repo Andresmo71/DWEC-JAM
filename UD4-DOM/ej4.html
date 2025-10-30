@@ -8,28 +8,27 @@
 </head>
 <body>
     <h1>Formulario de Preferencias</h1>
-    <form id="preferenciasForm">
+   
         <label for="deporte">Deporte favorito:</label><br>
-        <input type="text" id="deporte" name="deporte" required><br><br>
+        <input type="text" id="deporte" name="deporte" ><br><br>
 
         <label for="comida">Comida favorita:</label><br>
-        <input type="text" id="comida" name="comida" required><br><br>
+        <input type="text" id="comida" name="comida" ><br><br>
 
         <label for="cantante">Cantante favorito:</label><br>
-        <input type="text" id="cantante" name="cantante" required><br><br>
+        <input type="text" id="cantante" name="cantante" ><br><br>
 
-        <input type="submit" value="Enviar">
-    </form>
+        <input id="boton" type="submit" value="Enviar">
 
 
-    <div>
-        <p id="deporteText">Deporte favorito: ---</p>
+    <p >Deporte favorito: ---</p>
+    <div id="deporteRespuesta">   
+    </div >
+    <p>Comida favorita: ---</p>
+    <div id="comidaRespuesta">
     </div>
-    <div>
-        <p id="comidaText">Comida favorita: ---</p>
-    </div>
-    <div>
-        <p id="cantanteText">Cantante favorito: ---</p>
+    <p>Cantante favorito: ---</p>
+    <div id="cantanteRespuesta">
     </div>
     
     <script src="ej4.js"></script>
