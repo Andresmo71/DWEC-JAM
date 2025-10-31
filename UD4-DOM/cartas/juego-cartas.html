@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria Simple</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🧠 Memoria Simple</h1>
+        
+        <div class="game-info">
+            <div>Movimientos: <span id="moves">0</span></div>
+            <div>Parejas: <span id="pairs">0/8</span></div>
+        </div>
+        
+        <div class="memory-board" id="memoryBoard">
+            <!-- Las cartas se generan automáticamente -->
+        </div>
+        
+        <div class="controls">
+            <button id="restartBtn">Reiniciar Juego</button>
+            <button id="hintBtn">Mostrar Cartas</button>
+        </div>
+    </div>
+    
+    <div class="win-message" id="winMessage">
+        <h2>¡Ganaste! 🎉</h2>
+        <p>Encontraste todas las parejas</p>
+        <p>Movimientos: <span id="winMoves">0</span></p>
+        <button id="playAgainBtn">Jugar Otra Vez</button>
+    </div>    
+</body>
+</html>
