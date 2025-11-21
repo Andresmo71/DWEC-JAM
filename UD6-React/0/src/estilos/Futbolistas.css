@@ -1,0 +1,25 @@
+.lista-jugadores {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 300px;
+}
+
+.item-jugador {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.item-jugador:hover {
+  transform: translateX(5px);
+  background: #e6e6e6;
+  cursor: pointer;
+}
