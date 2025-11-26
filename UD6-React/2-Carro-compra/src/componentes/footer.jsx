@@ -1,17 +1,16 @@
 
-const Footer = ({ total,productos }) => {
-
+const Footer = ({ total, productos }) => {
   return (
     <footer>
-        <div className="container">
-            {productos.map}
-        </div>
-        <p>
-            total : {total}
-        </p>
+      <div className="container">
+        {productos.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
 
+      <p>Total: {total} €</p>
     </footer>
   );
 };
 
-export default MenuSuperior;
+export default Footer;

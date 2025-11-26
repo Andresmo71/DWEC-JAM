@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../estilos/menu.css";
 
-// Componente MenuSuperior
 const MenuSuperior = ({ total, productos }) => {
   const [carritoVisible, setCarritoVisible] = useState(false);
 
@@ -11,28 +10,27 @@ const MenuSuperior = ({ total, productos }) => {
 
   return (
     <div className="menu-superior">
-      {/* Icono a la izquierda */}
       <img
         src="/imagenes/supermercado.png"
         alt="Supermercado"
         className="icono-supermercado"
       />
 
-      {/* Texto a la derecha */}
-      <span className="carrito-texto">{productos.length} : {total}Є</span>
+      <span className="carrito-texto">
+        {productos.length} : {total} €
+      </span>
 
-      {/* Botón para mostrar/ocultar carrito */}
       <button className="toggle-carrito" onClick={toggleCarrito}>
         🛒
       </button>
 
-      {/* Carrito de productos */}
       {carritoVisible && (
         <div className="carrito-productos">
           <h4>Carrito</h4>
-          { productos.length > 0 ? (
+
+          {productos.length > 0 ? (
             <ul>
-              { productos.map((producto, index) => (
+              {productos.map((producto, index) => (
                 <li key={index}>{producto}</li>
               ))}
             </ul>
