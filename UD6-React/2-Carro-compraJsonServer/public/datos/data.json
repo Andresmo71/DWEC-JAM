@@ -1,0 +1,7 @@
+{
+    "productos": [
+       { "url": "./imagenes/manzana.jpg", "nombre": "Manzana", "precio": 5 }, 
+    { "url": "./imagenes/pera.jpg", "nombre": "Pera", "precio": 7 }, 
+    { "url": "./imagenes/platano.jpg", "nombre": "Platano", "precio": 4 } 
+    ]
+  }
