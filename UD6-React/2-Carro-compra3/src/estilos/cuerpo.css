@@ -4,7 +4,9 @@
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
   height: 100vh; /* Ocupa toda la altura de la ventana */
-  background-color: #f9f9f9; /* Color de fondo opcional */
+  background-color: #0d0d0d; /* Fondo negro pimienta / pizarra oscura */
+  padding: 40px;
+  gap: 30px; /* Espacio uniforme entre tarjetas */
 }
 
 /* Cada elemento de la lista */
@@ -13,22 +15,29 @@
   flex-direction: column; /* Ordena contenido verticalmente */
   align-items: center; /* Centra contenido horizontalmente dentro de cada tarjeta */
   margin: 0 15px; /* Espaciado horizontal entre elementos */
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-  background-color: #fff; /* Fondo blanco para cada tarjeta */
-  width: 150px; /* Ancho fijo */
+  padding: 18px;
+  border: 1px solid #2b2b2b;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra más profunda */
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f); /* Fondo oscuro tipo "card" */
+  width: 170px; /* Ancho fijo */
   text-align: center; /* Centra texto */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.container > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.8);
 }
 
 /* Imagen */
 .container img {
-  width: 100px; /* Ajusta el tamaño de la imagen */
-  height: 100px;
+  width: 110px; /* Ajusta el tamaño de la imagen */
+  height: 110px;
   object-fit: cover; /* Asegura que la imagen no se deforme */
   border-radius: 8px; /* Bordes redondeados */
-  margin-bottom: 10px; /* Espaciado debajo de la imagen */
+  margin-bottom: 12px; /* Espaciado debajo de la imagen */
+  border: 2px solid #2a2a2a;
 }
 
 /* Nombre y precio */
@@ -36,33 +45,35 @@
   font-size: 16px;
   font-weight: bold;
   margin: 5px 0;
+  color: #e6e6e6; /* Gris claro elegante */
 }
 
 .container p {
   font-size: 14px;
-  color: #555;
+  color: #b3b3b3;
   margin: 2px 0;
 }
 
 /* Precio */
 .container p:last-of-type {
   font-weight: bold;
-  color: #2d7a2d;
+  color: #32cd32; /* Verde estilo "glow" suave */
 }
 
 /* Botón */
 .container button {
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color: #8a2be2; /* Morado tipo streetwear */
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.15s ease;
 }
 
 .container button:hover {
-  background-color: #0056b3;
+  background-color: #6b1fb5;
+  transform: scale(1.05);
 }

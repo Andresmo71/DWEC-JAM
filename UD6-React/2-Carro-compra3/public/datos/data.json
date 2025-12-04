@@ -1,9 +1,9 @@
 {
     "productos": [
-       { "url": "./imagenes/manzana.jpg", "nombre": "Manzana", "precio": 5 }, 
-       { "url": "./imagenes/pera.jpg", "nombre": "Pera", "precio": 7 }, 
-       { "url": "./imagenes/platano.jpg", "nombre": "banana", "precio": 4 }     ,
-       { "url": "./imagenes/platano.jpg", "nombre": "Platano", "precio": 7 }     
+       { "url": "./imagenes/pimp.jpg", "nombre": "Vinilo TPAB", "precio": 5 }, 
+       { "url": "./imagenes/wun.jpg", "nombre": "Vinilo One of Wun", "precio": 7 }, 
+       { "url": "./imagenes/shox.jpg", "nombre": "Shox TL", "precio": 4 }     ,
+       { "url": "./imagenes/borcaro.jpg", "nombre": "Sudadera Borcaro", "precio": 7 }     
 
     ]
     

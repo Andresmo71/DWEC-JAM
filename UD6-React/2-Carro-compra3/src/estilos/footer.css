@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  background-color: #141414;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #3a3a3a;
+}
+
+/* Contenedor del footer */
+footer .footer-container {
+  display: flex;
+  gap: 18px;
+}
+
+/* Cada item del footer */
+footer .footer-container > div {
+  background: linear-gradient(145deg, #222222, #1b1b1b);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #dcdcdc;
+  font-weight: bold;
+  border: 1px solid #3c3c3c;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+}
+
+/* Botón eliminar */
+footer .footer-container button {
+  margin-left: 12px;
+  padding: 5px 9px;
+  background-color: #b63737;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+footer .footer-container button:hover {
+  background-color: #8e2929;
+  transform: scale(1.07);
+}

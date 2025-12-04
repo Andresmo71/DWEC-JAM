@@ -1,3 +1,4 @@
+import '../estilos/footer.css';
 const Footer = ({total, productos, setProductos, footerProductos, setFooterProductos}) => {
  
   function EliminarProducto(item){
@@ -10,7 +11,7 @@ const Footer = ({total, productos, setProductos, footerProductos, setFooterProdu
   }
   return (
   <footer> 
-    <div className="container">
+    <div className="footer-container">
       {footerProductos.map((item, index) => (
         <div key={index}>
           
