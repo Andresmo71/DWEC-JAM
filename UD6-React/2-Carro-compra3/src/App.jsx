@@ -13,6 +13,7 @@ function App() {
 
   const [total, setTotal] = useState(0); // Estado para el importe total
   const [productos, setProductos] = useState([]); // Lista de productos del carrrito
+  const [footerProductos, setFooterProductos] = useState([]);
 
   return (
    
@@ -26,7 +27,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path='/' element={<ListaImagenes total={total} setTotal={setTotal} productos={productos} setProductos={setProductos}/>}>
+          <Route path='/' element={<ListaImagenes total={total} setTotal={setTotal} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos}/>}>
           </Route>
 
           
@@ -41,9 +42,9 @@ function App() {
 
         </Routes>
         {/* Pasar total y setTotal a ListaImagenes */}
-        <ListaImagenes total={total} setTotal={setTotal} productos={productos} setProductos={setProductos}/>
+        
       </main>
-      <Footer total={total} productos={productos} setProductos={setProductos} />
+      <Footer total={total} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos} />
     </div>
     
     

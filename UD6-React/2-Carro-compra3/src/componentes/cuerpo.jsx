@@ -3,7 +3,7 @@ import '../estilos/cuerpo.css';
 import servicioProductos from '../servicios/servicioProductos';
 
 // Componente ListaImagenes
-const ListaImagenes = ({ total, setTotal , productos, setProductos }) => {
+const ListaImagenes = ({ total, setTotal , productos, setProductos, footerProductos, setFooterProductos}) => {
 
 // Variables de Estado  
 const [imageUrls, setImageUrls] = useState([])
@@ -27,7 +27,13 @@ useEffect(() => {
   // Función para añadir productos al carrito
   const AnadirProducto = (nombre, precio) => {
     setTotal(total + precio); 
-    setProductos([...productos, nombre]);  
+
+    setProductos([...productos, nombre]); 
+    
+      // 2. Añadir SOLO UNA VEZ al footer
+  if (!footerProductos.includes(nombre)) {
+    setFooterProductos([...footerProductos, nombre]);
+  }
   };
 
   return (
