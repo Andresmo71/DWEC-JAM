@@ -6,6 +6,7 @@ import { Routes , Route  } from 'react-router-dom';
 import pagina404 from './componentes/pagina404.jsx';
 import Autor from './componentes/autor.jsx';
 import Pagina404 from './componentes/pagina404.jsx';
+import DetalleProducto from './componentes/DetalleProdcuto.jsx';
 
 function App() {
 
@@ -35,12 +36,17 @@ function App() {
           <Route path="/autor" element={ <Autor/> }>
           </Route> 
 
-          <Route path="*" element={ <Pagina404/> }>
-          </Route> 
+           
            {/* <Route path="*" element={<Pagina404 />}>
           </Route> */}
+          <Route path="/:id" element={ <DetalleProducto productos={productos} setProductos={setProductos} /> }>
+          </Route> 
+          <Route path="*" element={ <Pagina404/> }>
+          </Route>
 
         </Routes>
+
+
         {/* Pasar total y setTotal a ListaImagenes */}
         
       </main>

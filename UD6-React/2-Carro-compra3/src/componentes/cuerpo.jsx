@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../estilos/cuerpo.css';
 import servicioProductos from '../servicios/servicioProductos';
+import { Link } from 'react-router-dom';
 
 // Componente ListaImagenes
 const ListaImagenes = ({ total, setTotal , productos, setProductos, footerProductos, setFooterProductos}) => {
@@ -41,7 +42,9 @@ useEffect(() => {
       {imageUrls.map((item, index) => (
         
         <div key={index}>
+          <Link to={`/>producto/${item.id}`} >
           <img src={item.url} alt="imagen" />
+          </Link>
           <h3>{item.nombre}</h3>
           <p>Precio: {item.precio} Euros</p>
           <button onClick={() => AnadirProducto(item.nombre, item.precio)}>
