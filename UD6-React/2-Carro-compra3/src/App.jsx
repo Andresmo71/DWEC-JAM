@@ -35,18 +35,13 @@ function App() {
 
           <Route path="/autor" element={ <Autor/> }>
           </Route> 
-
-           
-           {/* <Route path="*" element={<Pagina404 />}>
-          </Route> */}
-          <Route path="/:id" element={ <DetalleProducto productos={productos} setProductos={setProductos} /> }>
+          <Route path="/producto/:id" element={ <DetalleProducto productos={productos} setProductos={setProductos} /> }>
           </Route> 
           <Route path="*" element={ <Pagina404/> }>
-          </Route>
+          </Route> 
+           
 
         </Routes>
-
-
         {/* Pasar total y setTotal a ListaImagenes */}
         
       </main>
