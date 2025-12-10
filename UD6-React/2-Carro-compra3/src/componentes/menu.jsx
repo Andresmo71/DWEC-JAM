@@ -14,7 +14,7 @@ const MenuSuperior = ({ total, productos }) => {
     <div className="menu-superior">
       {/* Icono a la izquierda */}
       <img
-        src="/imagenes/supermercado.png"
+        src="/imagenes/noventa.jpg"
         alt="Supermercado"
         className="icono-supermercado"
       />

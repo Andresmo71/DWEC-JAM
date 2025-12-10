@@ -42,7 +42,7 @@ useEffect(() => {
       {imageUrls.map((item, index) => (
         
         <div key={index}>
-          <Link to={`/>producto/${item.id}`} >
+          <Link to={`/producto/${item.id}`} >
           <img src={item.url} alt="imagen" />
           </Link>
           <h3>{item.nombre}</h3>
