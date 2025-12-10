@@ -10,8 +10,9 @@
 }
 
 .icono-supermercado {
-  height: 40px;
+  height: 60px;
   width: auto;
+  border: 2px solid blue;
 }
 
 .carrito-texto {
