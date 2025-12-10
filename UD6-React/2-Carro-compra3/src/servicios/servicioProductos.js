@@ -5,6 +5,7 @@ class ServicioProductos{
   getAll() {
     return http.get("/productos");
   }
+
   getId(id) {
     return http.get(`/productos/${id}`);
   }
