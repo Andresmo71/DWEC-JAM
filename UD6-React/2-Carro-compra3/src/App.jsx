@@ -45,7 +45,7 @@ function App() {
         {/* Pasar total y setTotal a ListaImagenes */}
         
       </main>
-      <Footer total={total} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos} />
+      <Footer total={total} setTotal={setTotal} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos} />
     </div>
     
     

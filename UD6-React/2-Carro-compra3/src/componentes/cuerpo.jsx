@@ -26,14 +26,28 @@ useEffect(() => {
   
 
   // Función para añadir productos al carrito
-  const AnadirProducto = (nombre, precio) => {
-    setTotal(total + precio); 
+  const AnadirProducto = (item) => {
+    setTotal(total + item.precio); 
 
-    setProductos([...productos, nombre]); 
+    const existente = productos.find(p => p.nombre === item.nombre);
+    if(!existente){
+      setProductos([...productos, {nombre:item.nombre , cantidad:item.cantidad+1 , precio:item.precio}]); 
+    }else{
+      setProductos(productosPrevios =>
+        productosPrevios.map(producto =>{
+          if(producto.nombre === item.nombre){
+            return {...producto,cantidad:producto.cantidad+1};
+          }
+            return producto;
+          
+        })
+      )
+    }
+    
     
       // 2. Añadir SOLO UNA VEZ al footer
-  if (!footerProductos.includes(nombre)) {
-    setFooterProductos([...footerProductos, nombre]);
+  if (!footerProductos.includes(item.nombre)) {
+    setFooterProductos([...footerProductos, item.nombre]);
   }
   };
 
@@ -47,7 +61,7 @@ useEffect(() => {
           </Link>
           <h3>{item.nombre}</h3>
           <p>Precio: {item.precio} Euros</p>
-          <button onClick={() => AnadirProducto(item.nombre, item.precio)}>
+          <button onClick={() => AnadirProducto(item)}>
             Añadir al carrito
           </button>
         </div>

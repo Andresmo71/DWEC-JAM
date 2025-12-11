@@ -28,7 +28,7 @@ const MenuSuperior = ({ total, productos }) => {
 
       {/* Botón para mostrar/ocultar carrito */}
       <button className="toggle-carrito" onClick={toggleCarrito}>
-        🛒
+        <img src="/imagenes/snoop.png" alt="Carro" className="icono-snoop" />
       </button>
 
       {/* Carrito de productos */}
@@ -38,7 +38,7 @@ const MenuSuperior = ({ total, productos }) => {
           { productos.length > 0 ? (
             <ul>
               { productos.map((producto, index) => (
-                <li key={index}>{producto}</li>
+                <li key={index}>{`${producto.nombre} (${producto.cantidad})`}</li>
               ))}
             </ul>
           ) : (

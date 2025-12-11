@@ -3,7 +3,7 @@ const Autor = ({}) => {
   return (
 
     <div className="container">
-      <p>Andres</p>
+      <p>La Cabra</p>
     </div>
   
       
