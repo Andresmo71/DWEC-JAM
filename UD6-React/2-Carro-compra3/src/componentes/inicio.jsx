@@ -9,7 +9,7 @@ const inicio = ({ total, productos }) => {
     <div className="menu-superior">
       {/* Icono a la izquierda */}
       <img
-        src="/imagenes/noventa.jpg"
+        src="/imagenes/supermercado.png"
         alt="Supermercado"
         className="icono-supermercado"
       />

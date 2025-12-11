@@ -7,6 +7,7 @@ import pagina404 from './componentes/pagina404.jsx';
 import Autor from './componentes/autor.jsx';
 import Pagina404 from './componentes/pagina404.jsx';
 import DetalleProducto from './componentes/DetalleProdcuto.jsx';
+import Admin from './componentes/admin.jsx';
 
 function App() {
 
@@ -37,6 +38,8 @@ function App() {
           </Route> 
           <Route path="/producto/:id" element={ <DetalleProducto productos={productos} setProductos={setProductos} /> }>
           </Route> 
+          <Route path="/admin" element={<Admin/> }> 
+          </Route>
           <Route path="*" element={ <Pagina404/> }>
           </Route> 
            
