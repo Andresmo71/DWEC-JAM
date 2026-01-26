@@ -29,13 +29,13 @@ useEffect(() => {
   const AnadirProducto = (item) => {
     setTotal(total + item.precio); 
 
-    const existente = productos.find(p => p.nombre === item.nombre);
+    const existente = productos.find(p => p.id === item.id);
     if(!existente){
-      setProductos([...productos, {nombre:item.nombre , cantidad:item.cantidad+1 , precio:item.precio}]); 
+      setProductos([...productos, {id:item.id ,nombre:item.nombre , cantidad:item.cantidad+1 , precio:item.precio}]); 
     }else{
       setProductos(productosPrevios =>
         productosPrevios.map(producto =>{
-          if(producto.nombre === item.nombre){
+          if(producto.id === item.id){
             return {...producto,cantidad:producto.cantidad+1};
           }
             return producto;

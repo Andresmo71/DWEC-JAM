@@ -4,10 +4,10 @@ import {useParams} from 'react-router-dom'
 
 
 const DetalleProducto = ({productos, setProductos}) =>{
-
+    
     const idProducto=useParams().id
-    const [infoProducto , setInfoProducto]=useState([])
-    //const [infoProducto , setInfoProducto]=useState({id:'',url:'',nombre:'',precio:''})
+    const [infoProducto , setInfoProducto]=useState({id:'',url:'',nombre:'',precio:''})
+
 
     useEffect(() => {
         servicioProductos.getId(idProducto)

@@ -1,10 +1,32 @@
 {
-    "productos": [
-       { "id":1, "url": "./imagenes/pimp.jpg", "nombre": "Vinilo TPAB", "precio": 5 , "cantidad":0}, 
-       { "id":2, "url": "./imagenes/wun.jpg", "nombre": "Vinilo One of Wun", "precio": 7 , "cantidad":0 }, 
-       { "id":3, "url": "./imagenes/shox.jpg", "nombre": "Shox TL", "precio": 4, "cantidad":0 }     ,
-       { "id":4, "url": "./imagenes/borcaro.jpg", "nombre": "Sudadera Borcaro", "precio": 7 , "cantidad":0}     
-
-    ]
-    
-  }
+  "productos": [
+    {
+      "id": "1",
+      "url": "./imagenes/pimp.jpg",
+      "nombre": "Vinilo TPAB",
+      "precio": 5,
+      "cantidad": 0
+    },
+    {
+      "id": "2",
+      "url": "./imagenes/wun.jpg",
+      "nombre": "Vinilo One of Wunn",
+      "precio": 7,
+      "cantidad": 0
+    },
+    {
+      "id": "3",
+      "url": "./imagenes/shox.jpg",
+      "nombre": "Shox TL",
+      "precio": 4,
+      "cantidad": 0
+    },
+    {
+      "id": "4",
+      "url": "./imagenes/borcaro.jpg",
+      "nombre": "Sudadera Borcaro",
+      "precio": 7,
+      "cantidad": 0
+    }
+  ]
+}
