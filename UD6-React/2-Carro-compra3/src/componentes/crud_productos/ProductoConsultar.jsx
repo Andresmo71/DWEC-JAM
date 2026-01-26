@@ -10,4 +10,3 @@ const ProductoConsultar = ({ producto }) => {
 };
 
 export default ProductoConsultar;
-

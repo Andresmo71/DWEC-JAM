@@ -7,20 +7,33 @@ import Swal from "sweetalert2";
 
 
 const ProductoEditar = ({ producto, setProductos, onClose }) => {
-
+console.log(producto.nombre)
+console.log(producto.precio)
+console.log(producto.url)
+console.log(producto.cantidad)
   const [form, setForm] = useState({
     nombre: producto.nombre,
     precio: producto.precio,
     url: producto.url,
+    cantidad:producto.cantidad
   });
 
     // Maneja cambios en los inputs, actualiza el estado form
   const handleChange = e => {
+    const nombreInput=e.target.name 
+    let valorInput=e.target.value
+
+    if(nombreInput==="precio"){
+      valorInput=Number(valorInput)
+    }
+      
+
     setForm({
-      ...producto,// incluimos todos los valores originales
+      //...producto,// incluimos todos los valores originales
       ...form,       // sobrescribimos con los cambios actuales
       [e.target.name]: e.target.value, // actualizamos el campo modificado
     });
+    
   };
 
   const submit = e => {

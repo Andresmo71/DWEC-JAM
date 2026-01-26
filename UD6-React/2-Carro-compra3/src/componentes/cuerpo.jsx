@@ -27,7 +27,7 @@ useEffect(() => {
 
   // Función para añadir productos al carrito
   const AnadirProducto = (item) => {
-    setTotal(total + item.precio); 
+    setTotal(total + parseInt(item.precio)); 
 
     const existente = productos.find(p => p.id === item.id);
     if(!existente){

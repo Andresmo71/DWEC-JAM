@@ -1,16 +1,16 @@
 {
   "productos": [
     {
-      "id": "1",
+      "nombre": "Vinilo TPABa",
+      "precio": "10",
       "url": "./imagenes/pimp.jpg",
-      "nombre": "Vinilo TPAB",
-      "precio": 5,
-      "cantidad": 0
+      "cantidad": 0,
+      "id": "1"
     },
     {
       "id": "2",
       "url": "./imagenes/wun.jpg",
-      "nombre": "Vinilo One of Wunn",
+      "nombre": "Vinilo One of Wun",
       "precio": 7,
       "cantidad": 0
     },

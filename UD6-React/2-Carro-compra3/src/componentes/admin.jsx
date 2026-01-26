@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import servicioProductos from '../servicios/servicioProductos';
 import { Link } from 'react-router-dom';
-import ProductoBorrar from "./crud_productos/ProductoBorrar";
-import ProductoConsultar from "./crud_productos/ProductoConsultar";
-import ProductoEditar from "./crud_productos/ProductoEditar";
+import ProductoBorrar from './crud_productos/ProductoBorrar';
+import ProductoConsultar from './crud_productos/ProductoConsultar';
+import ProductoEditar from './crud_productos/ProductoEditar';
 import '../estilos/Admin.css';
 import Modal from './Modal';
 
@@ -37,18 +37,18 @@ const Admin = ({}) => {
         })
         .catch((error) => {
             
-        alert("Error al cargar productos , lo sentimos...")
+        alert('Error al cargar productos , lo sentimos...')
         });
     }, []);
 
     const consultarProducto = (producto) => {
     setProductoSeleccionado(producto);    // Guardamos producto seleccionado
-    gestionarModal("consultar", true);    // Abrimos el modal de consulta
+    gestionarModal('consultar', true);    // Abrimos el modal de consulta
   };
 
   const editarProducto = (producto) => {
     setProductoSeleccionado(producto);
-    gestionarModal("editar", true);
+    gestionarModal('editar', true);
   };
 
   const borrarProducto = (producto) => {
@@ -62,7 +62,7 @@ const Admin = ({}) => {
 
   return (
 
-    <div className="admin-container">
+    <div className='admin-container'>
       <ul>
               { infoProducto.map((producto, index) => (
                 <li key={index}>
@@ -79,16 +79,16 @@ const Admin = ({}) => {
      </ul>
 
               {/*Se abre si modals.consultar === true*/}
-     <Modal isOpen={modals.consultar} onClose={() => gestionarModal("consultar", false)}>
+     <Modal isOpen={modals.consultar} onClose={() => gestionarModal('consultar', false)}>
         {productoSeleccionado && <ProductoConsultar producto={productoSeleccionado} />}
       </Modal>
 
-      <Modal isOpen={modals.editar} onClose={() => gestionarModal("editar", false)}>
+      <Modal isOpen={modals.editar} onClose={() => gestionarModal('editar', false)}>
         {productoSeleccionado && (
           <ProductoEditar
             producto={productoSeleccionado}
             setProductos={setInfoProducto}
-            onClose={() => gestionarModal("editar", false)}
+            onClose={() => gestionarModal('editar', false)}
           />
         )}
       </Modal>
