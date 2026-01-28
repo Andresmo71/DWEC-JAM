@@ -8,6 +8,8 @@ import Autor from './componentes/autor.jsx';
 import Pagina404 from './componentes/pagina404.jsx';
 import DetalleProducto from './componentes/DetalleProdcuto.jsx';
 import Admin from './componentes/admin.jsx';
+import { PDFViewer } from '@react-pdf/renderer';
+import ReactDOM from 'react-dom';
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
   const [footerProductos, setFooterProductos] = useState([]);
 
   return (
+    
+      
    
     <div className="App">
       <header className="App-header">
@@ -28,6 +32,9 @@ function App() {
                   />
       </header>
       <main>
+        
+        
+        
         <Routes>
           <Route path='/' element={<ListaImagenes total={total} setTotal={setTotal} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos}/>}>
           </Route>

@@ -6,6 +6,7 @@ import ProductoConsultar from './crud_productos/ProductoConsultar';
 import ProductoEditar from './crud_productos/ProductoEditar';
 import '../estilos/Admin.css';
 import Modal from './Modal';
+import { PDFViewer } from '@react-pdf/renderer';
 
 const Admin = ({}) => {
 
@@ -61,7 +62,8 @@ const Admin = ({}) => {
 
 
   return (
-
+    
+    
     <div className='admin-container'>
       <ul>
               { infoProducto.map((producto, index) => (
