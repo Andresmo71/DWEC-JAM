@@ -25,6 +25,7 @@ const MenuSuperior = ({ total, productos }) => {
         <li><Link to="/">Inicio</Link></li>
         <li><Link to="/autor">Autor</Link></li>
         <li><Link to="/admin">Administrador</Link></li>
+        <li><Link to="/pdf">PDF</Link></li>
       </ul>
 
       {/* Botón para mostrar/ocultar carrito */}

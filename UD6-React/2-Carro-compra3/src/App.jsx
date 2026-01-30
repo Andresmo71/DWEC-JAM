@@ -9,7 +9,8 @@ import Pagina404 from './componentes/pagina404.jsx';
 import DetalleProducto from './componentes/DetalleProdcuto.jsx';
 import Admin from './componentes/admin.jsx';
 import { PDFViewer } from '@react-pdf/renderer';
-import MyDocument from './componentes/Comp_pdf';
+import MyDocument from './componentes/VistaPdf.jsx';
+import PaginaPdf from './componentes/PaginaPDF.jsx';
 
 
 function App() {
@@ -34,9 +35,7 @@ function App() {
                   />
       </header>
       <main>
-          <PDFViewer>
-    <MyDocument />
-  </PDFViewer>
+         
         
         
         <Routes>
@@ -53,6 +52,10 @@ function App() {
           </Route>
           <Route path="*" element={ <Pagina404/> }>
           </Route> 
+          <Route path="/pdf" element={ <PaginaPdf/>}>
+          </Route> 
+
+
            
 
         </Routes>
