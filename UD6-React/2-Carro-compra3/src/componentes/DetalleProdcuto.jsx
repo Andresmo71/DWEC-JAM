@@ -18,7 +18,7 @@ const DetalleProducto = ({productos, setProductos}) =>{
         })
         .catch((error) => {
             
-        alert("Tienes internet, está levantado el JSON-server")
+        alert("Tienes internet, no  está levantado el JSON-server")
         });
     }, []);
 

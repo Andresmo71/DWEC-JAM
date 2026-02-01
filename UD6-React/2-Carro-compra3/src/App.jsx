@@ -11,39 +11,35 @@ import Admin from './componentes/admin.jsx';
 import { PDFViewer } from '@react-pdf/renderer';
 import MyDocument from './componentes/VistaPdf.jsx';
 import PaginaPdf from './componentes/PaginaPDF.jsx';
-
+import UseStorageStateServicio from './componentes/UseStorageState.jsx';
 
 function App() {
 
 
 
-  const [total, setTotal] = useState(0); // Estado para el importe total
-  const [productos, setProductos] = useState([]); // Lista de productos del carrrito
-  const [footerProductos, setFooterProductos] = useState([]);
+  const [total, setTotal] = UseStorageStateServicio("carrito_total",0); // Estado para el importe total
+  const [productos, setProductos] = UseStorageStateServicio("carrito_productos",[]); // Lista de productos del carrrito
+  const [footerProductos, setFooterProductos] = UseStorageStateServicio("carrito_footer",[]);
 
   return (
     <>
   
-     
-   
     <div className="App">
       <header className="App-header">
         {/* Pasar el total al menú superior */}
         <MenuSuperior 
             total={total} 
             productos={productos}
-                  />
+                  /> 
       </header>
       <main>
          
-        
         
         <Routes>
           <Route path='/' element={<ListaImagenes total={total} setTotal={setTotal} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos}/>}>
           </Route>
         
           
-
           <Route path="/autor" element={ <Autor/> }>
           </Route> 
           <Route path="/producto/:id" element={ <DetalleProducto productos={productos} setProductos={setProductos} /> }>
