@@ -3,15 +3,15 @@ import MenuSuperior from './componentes/menu'
 import ListaImagenes from './componentes/cuerpo'
 import Footer from './componentes/footer';
 import { Routes , Route  } from 'react-router-dom';
-import pagina404 from './componentes/pagina404.jsx';
 import Autor from './componentes/autor.jsx';
 import Pagina404 from './componentes/pagina404.jsx';
 import DetalleProducto from './componentes/DetalleProdcuto.jsx';
 import Admin from './componentes/admin.jsx';
 import { PDFViewer } from '@react-pdf/renderer';
-import MyDocument from './componentes/VistaPdf.jsx';
 import PaginaPdf from './componentes/PaginaPDF.jsx';
 import UseStorageStateServicio from './componentes/UseStorageState.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
+import Login from './componentes/Login.jsx';
 
 function App() {
 
@@ -23,7 +23,8 @@ function App() {
 
   return (
     <>
-  
+    
+    <AuthProvider>
     <div className="App">
       <header className="App-header">
         {/* Pasar el total al menú superior */}
@@ -50,6 +51,7 @@ function App() {
           </Route> 
           <Route path="/pdf" element={ <PaginaPdf/>}>
           </Route> 
+          <Route path="/login" element={<Login />} />
 
 
            
@@ -60,7 +62,7 @@ function App() {
       </main>
       <Footer total={total} setTotal={setTotal} productos={productos} setProductos={setProductos} footerProductos={footerProductos} setFooterProductos={setFooterProductos} />
     </div>
-    
+    </AuthProvider>
     </>
   );
 }

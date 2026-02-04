@@ -1,18 +1,18 @@
 {
   "productos": [
     {
-      "nombre": "Vinilo TPABa",
-      "precio": "10",
+      "id": "1",
       "url": "./imagenes/pimp.jpg",
-      "cantidad": 0,
-      "id": "1"
+      "nombre": "Vinilo TPAB",
+      "precio": 5,
+      "cantidad": 0
     },
     {
-      "id": "2",
+      "nombre": "Vinilo One of Wunn",
+      "precio": "1",
       "url": "./imagenes/wun.jpg",
-      "nombre": "Vinilo One of Wun",
-      "precio": 7,
-      "cantidad": 0
+      "cantidad": 0,
+      "id": "2"
     },
     {
       "id": "3",
@@ -22,11 +22,11 @@
       "cantidad": 0
     },
     {
-      "id": "4",
-      "url": "./imagenes/borcaro.jpg",
       "nombre": "Sudadera Borcaro",
-      "precio": 7,
-      "cantidad": 0
+      "precio": "13",
+      "url": "./imagenes/borcaro.jpg",
+      "cantidad": 0,
+      "id": "4"
     }
   ]
 }

@@ -1,0 +1,67 @@
+/* --- CONTENEDOR DE LA PÁGINA --- */
+.pdf-page-container {
+  background-color: #080808; /* Negro carbón */
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Oswald', sans-serif;
+  color: #e0e0e0;
+}
+
+/* --- TÍTULO --- */
+.pdf-page-container h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #e0e0e0;
+  border-left: 5px solid #4b0082; /* Detalle morado berenjena */
+  padding-left: 15px;
+  margin-bottom: 30px;
+  align-self: flex-start;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* --- VISUALIZADOR PDF --- */
+/* El componente PDFViewer de la librería genera un iframe */
+.pdf-viewer-style {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  border: 2px solid #2a2a2a; /* Gris cemento */
+  box-shadow: 0 0 20px rgba(75, 0, 130, 0.2); /* Brillo morado sutil */
+}
+
+/* --- BOTÓN DE DESCARGA (ESTILO UNDERGROUND) --- */
+.pdf-download-btn {
+  background-color: transparent;
+  color: #e0e0e0;
+  padding: 15px 35px;
+  border: 2px solid #8a0303; /* Rojo sangre */
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pdf-download-btn:hover {
+  background-color: #8a0303;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(138, 3, 3, 0.5);
+}
+
+/* Texto de carga */
+.loading-text {
+  color: #888888;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

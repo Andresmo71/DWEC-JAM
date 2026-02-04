@@ -1,0 +1,170 @@
+/* =========================================
+   ESTÉTICA DARK URBAN / HIP-HOP UNDERGROUND
+   ========================================= */
+
+/* Importamos una fuente Google Font que tenga peso "calle" (Opcional pero recomendado) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --black-coal: #080808;      /* Fondo casi negro */
+  --black-asphalt: #121212;   /* Fondo tarjeta */
+  --grey-cement: #2a2a2a;     /* Bordes y líneas */
+  --grey-pepper: #888888;     /* Textos secundarios */
+  --white-dirty: #e0e0e0;     /* Texto principal (nunca blanco puro) */
+  --red-blood: #8a0303;       /* Acento principal */
+  --red-bright: #b30000;      /* Hover */
+  --error-bg: #220505;        /* Fondo error */
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--black-coal);
+  /* Textura de ruido sutil para darle suciedad (opcional) */
+  background-image: radial-gradient(circle at center, transparent 0%, #000 100%);
+  color: var(--white-dirty);
+  font-family: 'Roboto', sans-serif; /* Fuente base */
+}
+
+/* --- TARJETA DE LOGIN --- */
+.login-card {
+  background-color: var(--black-asphalt);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  /* Borde duro industrial */
+  border: 1px solid var(--grey-cement);
+  /* Sombra dura, sin difuminar (estilo brutalista) */
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8); 
+  position: relative;
+}
+
+/* Título */
+.login-card h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: 'Oswald', sans-serif; /* Fuente tipo flyer/cartel */
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--red-blood);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* --- FORMULARIO --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--grey-pepper);
+  font-weight: bold;
+}
+
+/* Inputs con estilo "raw" */
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background-color: #050505;
+  border: 1px solid var(--grey-cement);
+  color: var(--white-dirty);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+}
+
+.form-group input:focus {
+  border-color: var(--red-blood);
+  background-color: #000;
+  box-shadow: -4px 4px 0px rgba(138, 3, 3, 0.2);
+}
+
+.form-group input::placeholder {
+  color: #444; /* Placeholder muy oscuro */
+}
+
+/* --- BOTÓN PRINCIPAL (Submit) --- */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--red-blood);
+  color: var(--white-dirty);
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  /* Sin bordes redondeados */
+  border-radius: 0; 
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--red-bright);
+  transform: translateY(-2px); /* Pequeño salto */
+  box-shadow: 0 4px 15px rgba(180, 0, 0, 0.3);
+}
+
+.login-button:disabled {
+  background-color: var(--grey-cement);
+  color: var(--grey-pepper);
+  cursor: not-allowed;
+}
+
+/* --- MENSAJES DE ERROR --- */
+.error-message {
+  background-color: var(--error-bg);
+  border-left: 3px solid var(--red-bright);
+  color: #ffcccc;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-family: 'Roboto', monospace; /* Estilo código de error */
+}
+
+/* --- FOOTER / TOGGLE --- */
+.login-footer {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--grey-cement);
+  padding-top: 1.5rem;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: var(--grey-pepper);
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.toggle-button:hover {
+  color: var(--red-blood);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+  .login-card {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .form-group input {
+    background-color: var(--black-asphalt);
+  }
+}
